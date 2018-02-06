@@ -1,58 +1,17 @@
 # Logger
-
 A kernel-based keylogger for Windows.
 
-## Download
-
-[DOWNLOAD EXE HERE](https://github.com/felipebocolowski/logger/releases/)
-
-You can either:
-
-A. [Download the executable and run.](https://github.com/felipebocolowski/logger/releases/)
-
-B. Download the source code and compile using the options you'd like.
-
 ## Dependencies
-
-For running, you'll need:
-
-* Windows 7 or higher (Tested on Windows 8.1 and Windows 10)
-
+* Windows 7 or higher
 * .NET Framework v4.0
 
-For compiling, you'll need:
+## Download
+Simply [download](https://github.com/felipebocolowski/logger/releases/) the executable and run it.
 
-* Visual Studio 12 or higher (Compiled with Visual Studio 2015 Community Update 3)
+## Usage
+This software uses the .NET Framework to interact with `user32.dll` and `kernel32.dll` from `System` library and intercept all keys pressed by the input user and saving all the output to `log.txt` within the application path.
 
-* Windows Form Application Base with .NET Framework v4.0
+* Since 1.3.0.0, Logger is shown at the system tray by default. To hide it, execute by passing the `-s` parameter (`"Logger.exe" -s`).
 
-## How It Works
-
-This software uses .NET Framework v4.0 to interact with `user32.dll` and `kernel32.dll` from `System` library and intercept all keys pressed by the input user and saving all the output to `log.txt` within the application path.
-
-Since 1.3.0.0, Logger is shown at the system tray, to hide it, start it passing the `-s` parameter (`"Logger.exe" -s`).
-
-## Updates
-
-### 1.0.0.0
-* First release.
-* New logo.
-
-### 1.2.0.0
-* Less code, better RAM usage.
-* Added a blank space after each capture.
-
-### 1.3.0.0
-* Better instace.
-* NEW! System tray icon.
-* NEW! Stealth mode passed by "-s" parameter.
-
-### 1.4.0.0
-* Log file existence checking.
-* Hide button on system tray.
-
-## Credits and Contribution
-
-This is a free and open source software. As my personal project, you are able to copy, distribute, and modify as long as you keep my credits.
-
-All kinds of contribution are welcome!
+## Credits
+Licensed under the MIT License.
